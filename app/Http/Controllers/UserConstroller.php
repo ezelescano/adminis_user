@@ -18,8 +18,8 @@ class UserConstroller extends Controller
         return view('users.create');
     }
 
-    public function show($id)
+    public function show(User $user)
     {
-        return view('users.show', compact('id'));
+        return view('users.show', compact('user'));
     }
 }

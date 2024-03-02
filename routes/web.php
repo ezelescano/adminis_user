@@ -21,5 +21,5 @@ Route::get('/', HomeConstroller::class)->name('home');
 Route::controller(UserConstroller::class)->group(function () {
     Route::get('users', 'index')->name('users.index');
     Route::get('users/create', 'create')->name('users.create');
-    Route::get('users/{id}', 'show')->name('users.show');
+    Route::get('users/{user}', 'show')->name('users.show');
 });
