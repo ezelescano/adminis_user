@@ -3,7 +3,6 @@
 @section('title', 'Show' . $user->name)
 
 @section('content')
-
     <div class="conteiner">
         <div>
             <h1 class="text-2xl font-bold text-center">Bienvenido al detalle del usuario {{ $user->name }}</h1>
@@ -12,6 +11,18 @@
         <div>
             <a class=" ml-2 text-xs hover:underline text-blue-300" href="{{ route('users.index') }}">Volver al inicio</a>
         </div>
+
+        <div>
+            <a class="ml-2 text-xs hover:underline text-blue-300" href="{{ route('users.edit', $user) }}">Editar Usuario</a>
+        </div>
+
+        <form class=" ml-2 text-xs hover:underline text-red-300" action="{{ route('users.destroy', $user) }}" method="POST">
+            @csrf
+
+            @method('delete')
+
+            <button type="submit">Eliminar</button>
+        </form>
 
         <div class="border p-4 rounded-md">
             <dl class="grid grid-cols-2 gap-3 ">

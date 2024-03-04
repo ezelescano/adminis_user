@@ -13,10 +13,6 @@
             <a class="text-xs hover:underline text-blue-300" href="{{ route('users.index') }}">Volver al Inicio</a>
         </div>
 
-        <div>
-            <a class="text-xs hover:underline text-blue-300" href="{{ route('users.edit') }}">Editar Usuario</a>
-        </div>
-
         <form action="{{ route('users.store') }}" method="POST">
 
             @csrf
